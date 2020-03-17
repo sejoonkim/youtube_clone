@@ -68,7 +68,12 @@
   - what to .gitignore in NodeJS -> [gitignore](https://github.com/github/gitignore/blob/master/Node.gitignore)
 
 - Git: How to remove files listed in .gitignore but still on git repository?
+
   - [Link](https://stackoverflow.com/questions/13541615/how-to-remove-files-that-are-listed-in-the-gitignore-but-still-on-the-repositor/13541721)
+
+- How to install NPM without adding to "Dependencies"?
+
+  - > npm install nodemon -D
 
 <br/>
 
@@ -89,3 +94,19 @@
   - NEED to **respond** something
 - POST
   - send information to website, ex) login
+
+<br/>
+
+### Babel
+
+- translates new JS to old JS -> [babel](https://babeljs.io/)
+
+- > npm install @babel/node
+  >
+  > npm install @babel/preset-env
+  >
+  > create .babelrc
+  >
+  > npm intall @babel/core
+
+<br/>
