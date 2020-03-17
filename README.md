@@ -158,3 +158,28 @@
   - export default
 
     - > import app from "./app"
+
+<br/>
+
+### MVC Pattern
+
+- model-view-controller pattern -> [Link](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm)
+- Model: data
+- View: how data looks like
+- Controller: function that looks for the data
+
+1. Separate the routes from the function
+
+   - > _app**.**get_("/", someFunction); -> inacceptable!
+
+2. create URLs
+
+   - create routes.js to control other routers
+
+   - > /:id -> value that can change
+     >
+     > const USER = "/:id"
+
+3. Update each child routers
+
+4. create controllers directory, add user and video controllers
