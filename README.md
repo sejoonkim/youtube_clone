@@ -1,7 +1,5 @@
 # Youtube Clone
 
-<br/>
-
 ## Introduction
 
 - website vs web application
