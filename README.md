@@ -110,3 +110,25 @@
   > npm intall @babel/core
 
 <br/>
+
+### \*Express Core: Middlewares
+
+- "Middleman" between **requests** and **responses** -> [Middleware in ExpressJS](https://medium.com/@zibon/what-the-heck-is-a-middleware-in-expressjs-8f2661813ecd)
+
+- middleware functions: check all requests before the server making responses
+
+- 4 capable tasks(executing code, make changes to req-res, ending req-res cycle, calling next middleware)
+
+- Examples of middlewares
+
+  - checks if user is logged in or not
+  - create logs of requests, responses
+  - check the purpose of requests(e.g. upload files)
+
+- Order Matters!
+
+  - > app.use(middleware);
+    >
+    > app.get("/", function);
+    >
+    > app.get("/hello", function);

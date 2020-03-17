@@ -1,4 +1,4 @@
-// old syntax
+// // old syntax
 // const express = require("express");
 import express from "express";
 
@@ -19,11 +19,27 @@ const PORT = 4000;
 // Arrow functions
 const handleListening = () =>
   console.log(`Listening on http://localhost:${PORT}`);
-const handleHome = (req, res) => res.send("Hello from Home");
+const handleHome = (req, res) => {
+  console.log("I am Home");
+  res.send("Hello from Home");
+};
 const handleProfile = (req, res) => res.send("You are on my profile");
+
+// create Middleware
+const betweenHome = (req, res, next) => {
+  console.log("I am between");
+  next();
+};
+
+// use betweenHome middleware on every connection on my web
+// ORDER MATTERS!
+app.use(betweenHome);
 
 // answer to webpage request
 app.get("/", handleHome);
+
+// // Initial middleware code
+// app.get("/", betweenHome, handleHome);
 
 app.get("/profile", handleProfile);
 
