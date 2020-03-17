@@ -50,7 +50,7 @@
 
 - [npm](https://www.npmjs.com/)
 
-- Steps interact with NPM
+- Steps to interact with NPM
 
   1. > npm init
 
@@ -62,3 +62,30 @@
 
      - looks for package.json -> "dependencies"
      - installs them
+
+- create .gitignore
+
+  - what to .gitignore in NodeJS -> [gitignore](https://github.com/github/gitignore/blob/master/Node.gitignore)
+
+- Git: How to remove files listed in .gitignore but still on git repository?
+  - [Link](https://stackoverflow.com/questions/13541615/how-to-remove-files-that-are-listed-in-the-gitignore-but-still-on-the-repositor/13541721)
+
+<br/>
+
+### Start with Routing
+
+- **index.js**
+
+- Routing -> [ExpressJS link](https://expressjs.com/en/guide/routing.html)
+
+  - > app.listen(3030, callback_function after start listening to PORT:3030);
+
+<br/>
+
+### Handle Routes
+
+- GET
+  - **request** for a page
+  - NEED to **respond** something
+- POST
+  - send information to website, ex) login
