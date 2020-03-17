@@ -132,3 +132,29 @@
     > app.get("/", function);
     >
     > app.get("/hello", function);
+
+- morgan middleware
+  - HTTP request logger middleware -> [morgan](https://www.npmjs.com/package/morgan)
+- helmet middleware
+  - secure Express app by setting various HTTP headers -> [helmet](https://www.npmjs.com/package/morgan)
+- body-parser, cookie-parser middleware
+  - from req, get information from body -> [body-parser](https://www.npmjs.com/package/body-parser)
+  - from req, get information from cookie and handle session -> [cookie-parser](https://www.npmjs.com/package/cookie-parser)
+
+<br/>
+
+### \*Express Core: Routing
+
+- (~~index.js~~ -> app.js) -> call the application
+- init.js -> start the application
+- router.js -> handle routes
+
+- export vs export default
+
+  - export
+
+    - > import { someRouter } from "./router"
+
+  - export default
+
+    - > import app from "./app"
