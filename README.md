@@ -34,3 +34,33 @@
 ### Who uses NodeJS?
 
 - Paypal, Netflix, Uber
+
+<br/>
+
+<br/>
+
+## ExpressJS
+
+### What is ExpressJS?
+
+- web framework for NodeJS -> [NodeJS](https://expressjs.com/)
+- able to create a server with so much less lines of code
+
+<br/>
+
+### NPM
+
+- [npm](https://www.npmjs.com/)
+
+- Steps interact with NPM
+
+  1. > npm init
+
+     - package.json is created
+
+  2. > npm install express
+
+  3. > npm i or npm install
+
+     - looks for package.json -> "dependencies"
+     - installs them
