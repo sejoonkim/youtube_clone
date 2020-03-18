@@ -183,3 +183,37 @@
 3. Update each child routers
 
 4. create controllers directory, add user and video controllers
+
+<br/>
+
+### Pug
+
+- easy template for HTML
+- install -> [Link](https://www.npmjs.com/package/pug)
+- change the view engine of express to pug -> [app.set](https://expressjs.com/en/4x/api.html#app.set)
+
+- "view" of express -> create "views" directory
+
+#### Pug: Layouts
+
+- views -> layouts -> create base template for HTML
+
+#### Pug: Partials
+
+- portion of a page to extract
+
+- [fontawesome](https://fontawesome.com/icons?d=gallery) to add the icon
+
+- > include ../partials/header
+
+#### Pug: Local Variables
+
+- add information to the template as a whole
+
+- res.locals -> [Link](https://expressjs.com/en/4x/api.html#res.locals)
+
+- can access from any view
+
+#### Pug: Template Variables
+
+- > _res**.**render_("path", { variable: "value" });

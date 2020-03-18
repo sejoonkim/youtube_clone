@@ -9,6 +9,7 @@ import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
+import { localsMiddleware } from "./middlewares";
 
 // ---------- const ----------
 // execute express
@@ -30,11 +31,14 @@ const app = express();
 // };
 
 // ---------- app.OOO ----------
+app.use(helmet()); // for security
+app.set("view engine", "pug");
 app.use(cookieParser()); // for User Authentication
 app.use(bodyParser.json()); // checks what content user is sending
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(helmet()); // for security
 app.use(morgan("dev"));
+
+app.use(localsMiddleware);
 
 // does not suit with MVC pattern
 // // answer to webpage request
