@@ -1,4 +1,9 @@
 extends layouts/main.pug
 
 block content
-    p Join
+    .form__container    
+        form(action="/login", methood="post")
+            input(type="email, name="email", placeholder="Email")
+            
+
+
