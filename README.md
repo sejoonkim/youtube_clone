@@ -289,3 +289,21 @@
 > ​ h1=item.title
 >
 > ​ p= item.description
+
+<br/>
+
+### Mixins
+
+- element to repeat in multiple pages
+
+- > "<video width="some" height="thing"></video>"
+
+- function
+
+- \*PUG
+
+  - > h1 = video.title // WRONG!!! outputs "= video.title"
+    >
+    > h1=video.title OR h1= video.title
+
+- Different Information, Same Structure
