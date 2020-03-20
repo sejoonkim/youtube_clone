@@ -243,4 +243,49 @@
 ### Designing each pages
 
 - Home
+
+- Search
+
 - Join
+
+- Login -> added social login
+
+- \*\*\*users/edit-profile leads to User Detail page
+
+  - in routes.js
+
+    - ```javascript
+      const VIDEO_DETAIL = "/:id";
+      const EDIT_VIDEO = "/edit-profile";
+      const CHANGE_PASSWORD = "/change-password";
+      // node thinks that /edit-profile is /:id since it is declared at the next line
+      ```
+
+    - ```javascript
+      // Solution => change the order of declaration in userRouter.js
+      userRouter.get(routes.editProfile, editProfile);
+      userRouter.get(routes.changePassword, changePassword);
+      userRouter.get(routes.userDetail, userDetail);
+      ```
+
+- Edit Profile
+
+- Change Password
+
+- Upload
+
+- Video Detail
+
+- Edit Video
+
+- Delete Video
+
+<br/>
+
+### Add fake db data array to Home page
+
+> each item in videos
+>
+> ​ h1=item.title
+>
+> ​ p= item.description
