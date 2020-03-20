@@ -286,9 +286,9 @@
 
 > each item in videos
 >
-> ​ h1=item.title
+> ? h1=item.title
 >
-> ​ p= item.description
+> ? p= item.description
 
 <br/>
 
@@ -307,3 +307,21 @@
     > h1=video.title OR h1= video.title
 
 - Different Information, Same Structure
+
+<br/>
+
+### Modify Join, Login page
+
+- divide get / post routes
+  - check globalRouter.js
+- return correct status code for passwords do not match
+
+  - [status codes](https://www.tutorialspoint.com/http/http_status_codes.htm)
+
+- how to show actual user page with /:id url?
+  - middlewares.js
+    - add user { id: 1}
+  - routes.js
+    - change routes from const to function
+  - header.pug
+    - modify a tag to link routes.userDeatil(user.id)
