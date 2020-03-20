@@ -325,3 +325,17 @@
     - change routes from const to function
   - header.pug
     - modify a tag to link routes.userDeatil(user.id)
+
+<br/>
+
+### Logout, Upload pages and Security
+
+- router
+
+  - > router([url], [controller])
+
+- controller
+
+  - prepares **what to render** on the page based on the kinds of request
+
+- > required=true for security
