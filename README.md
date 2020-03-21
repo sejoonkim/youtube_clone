@@ -378,3 +378,12 @@
 
 - JS, mongoose is conscious, but MongoDB does not know created schema yet
   - so at init.js, import the Video model
+
+<br/>
+
+### Comment Model
+
+- Relationship of Data: How do we relate Video & Comment models?
+  - save video id on comment model
+  - OR video model contains array of comment ids
+- Finally have a working DB!

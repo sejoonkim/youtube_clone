@@ -10,6 +10,7 @@ dotenv.config();
 
 // hidden to public
 mongoose.connect(process.env.MONGO_URL, {
+  useUnifiedTopology: true,
   useNewUrlParser: true,
   useFindAndModify: false
 });
