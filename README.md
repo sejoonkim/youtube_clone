@@ -387,3 +387,19 @@
   - save video id on comment model
   - OR video model contains array of comment ids
 - Finally have a working DB!
+
+<br/>
+
+### Finish Home Controller
+
+- How do we use models?
+
+  - videoController.js
+
+    - > _import_ Video _from_ "../models/Video";
+
+    - > export const home = async(req, res)
+      >
+      > await while getting all videos
+      >
+      > \*\*\*use Try {} Catch {}

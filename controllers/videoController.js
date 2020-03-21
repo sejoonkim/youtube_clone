@@ -12,9 +12,16 @@
 
 // import { videos } from "../db";
 import routes from "../routes";
+import Video from "../models/Video";
 
-export const home = (req, res) => {
-  res.render("home", { pageTitle: "Home", videos });
+export const home = async (req, res) => {
+  try {
+    const videos = await Video.find({}); // find any videos in DB
+    res.render("home", { pageTitle: "Home", videos });
+  } catch (error) {
+    console.log(error);
+    res.render("home", { pageTitle: "Home", videos: [] });
+  }
 };
 
 export const search = (req, res) => {
@@ -22,7 +29,7 @@ export const search = (req, res) => {
     query: { term: searchingBy }
   } = req;
   // equals const searchingBy = req.query.term;
-  res.render("search", { pageTitle: "Search", searchingBy, videos });
+  res.render("search", { pageTitle: "Search", searchingBy });
 };
 
 export const getUpload = (req, res) =>
