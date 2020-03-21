@@ -366,3 +366,15 @@
 - dotenv - hide keys and strings
   - to keep DB secret
   - DB username and password
+
+<br/>
+
+### Create Video Model
+
+- model = actual data
+- schema = structure
+
+  - [mongoose_schema](https://mongoosejs.com/docs/guide.html)
+
+- JS, mongoose is conscious, but MongoDB does not know created schema yet
+  - so at init.js, import the Video model
