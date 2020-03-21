@@ -10,7 +10,7 @@
 
 // export const videos = (req, res) => res.render("Videos");
 
-import { videos } from "../db";
+// import { videos } from "../db";
 import routes from "../routes";
 
 export const home = (req, res) => {

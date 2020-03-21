@@ -339,3 +339,30 @@
   - prepares **what to render** on the page based on the kinds of request
 
 - > required=true for security
+
+<br/>
+
+<br/>
+
+## MongoDB
+
+### Setup
+
+- download mongoDB Community Server -> [Link](https://www.mongodb.com/download-center/community)
+
+- DATABASE: check mongod, is running
+
+  - > then mongo
+
+- How We Talk to DB => need adapter of JS -> mongoose.js
+
+  - talk to db
+
+<br/>
+
+### Connecting to MongoDB
+
+- connect at init.js, nor at videoController.js
+- dotenv - hide keys and strings
+  - to keep DB secret
+  - DB username and password
