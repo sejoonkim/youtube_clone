@@ -403,3 +403,53 @@
       > await while getting all videos
       >
       > \*\*\*use Try {} Catch {}
+
+<br/>
+
+### Video configuration on DB, Node
+
+- console.dir
+  - find location
+- middleware to upload video file & give URL
+
+  - multer
+    - give url of the file
+    - makes files in /videos directory
+    - creates path:
+  - middleware.js modification
+  - videoRouter.js
+    - at post method, add "uploadVideo"
+
+- display videos on /Home without URL error
+
+  - delete /videos
+
+  - middlewares.js
+
+    - dest: "uploads/videos/" \*\*\*NO SLASH
+
+      - > dest: "/uploads/videos/"
+        >
+        > the videos will be put at the root of the hardware dir.
+
+  - manipulate MongoDB with commands
+
+    - ```mariadb
+      > use youtube_clone
+      switched to db youtube_clone
+      > show collections
+      videos
+      > db.videos.remove({})
+      WriteResult({ "nRemoved" : 2 })
+      > exit
+      bye
+      ```
+
+  - app.js
+
+    - create /uploads route
+    - express.static()
+
+- User Generated Content should be on a **SEPARATE** Server
+
+  - Do **NOT** put CODE / FILE at the same Server

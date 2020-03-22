@@ -33,11 +33,11 @@ const app = express();
 // ---------- app.OOO ----------
 app.use(helmet()); // for security
 app.set("view engine", "pug");
+app.use("/uploads", express.static("uploads"));
 app.use(cookieParser()); // for User Authentication
 app.use(bodyParser.json()); // checks what content user is sending
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
-
 app.use(localsMiddleware);
 
 // does not suit with MVC pattern
