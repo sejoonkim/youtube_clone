@@ -286,9 +286,9 @@
 
 > each item in videos
 >
-> ? h1=item.title
+> ​ h1=item.title
 >
-> ? p= item.description
+> ​ p= item.description
 
 <br/>
 
@@ -409,7 +409,9 @@
 ### Video configuration on DB, Node
 
 - console.dir
+
   - find location
+
 - middleware to upload video file & give URL
 
   - multer
@@ -453,3 +455,121 @@
 - User Generated Content should be on a **SEPARATE** Server
 
   - Do **NOT** put CODE / FILE at the same Server
+
+<br/>
+
+### Get Video ID for Video Detail
+
+1. modify videoController.js
+
+   - > req.params = "/:id", not get anything when "/:id/something"
+
+2. mongoose model.findById() -> [Link](https://mongoosejs.com/docs/api.html#model_Model.findById)
+
+3. videoDetail.pug
+
+   - display like youtube
+   - create a button for editing video
+     - routes.js
+       - modify const to function
+
+4. videoRouter.js
+
+   - change .get request from const to function()
+
+<br/>
+
+### GET = .render || POST = .update, .redirect
+
+<br/>
+
+### Editing a Video
+
+1. videoController.js
+
+   - separate getEditVideo, postEditVideo
+
+2. videoRouter.js
+
+   - separate get, post
+
+3. get id as a parameter from the URL
+
+4. at editVideo page, show video's title and description
+
+   - pass video object when rendering
+
+     > 1. res.render("editVideo", { pageTitle: `Edit ${video.title}`, video })
+     >
+     > 2. at editVideo.pug, value prop
+     > 3. value=video.title
+     > 4. textarea does not have value
+     >    - textarea(_name_="description", _placeholder_="Description")=video.description
+
+5. check URL for editVideo
+
+<br/>
+
+### Update Video
+
+1. videoController.js
+
+   - modify postEditVideo
+
+2. mongoose
+
+   - model.findOneAndUpdate -> [Link](https://mongoosejs.com/docs/tutorials/findoneandupdate.html)
+
+   - save
+
+<br/>
+
+### Delete Video
+
+- only GET
+
+1. routes.js
+   - modify deleteVideo route
+2. editVideo.pug
+3. videoRouter.js
+4. videoController.js
+   - mongoose -> [findOneAndRemove](https://mongoosejs.com/docs/api/model.html#model_Model.findOneAndRemove)
+
+<br/>
+
+### Cleanups - minor fixes
+
+- old videos ordered at the top
+
+  - videoController.js
+    - .sort(-1)
+    - newest one first
+
+- search - **ESLint**
+
+  - Linter
+
+    - automatic code checker
+
+    - > npm install eslint -g //global use
+      >
+      > eslint --init
+
+    - eslint prettier single quotes
+
+      - > npm install eslint-config-prettier
+
+    - npm uninstall
+
+- search
+
+  - regex -> [Link](https://regex101.com/)
+
+  - videoController.js
+
+    - > \${regex}
+
+  - search.pug
+
+    - add id
+    - modify vidoeFile
