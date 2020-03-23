@@ -286,9 +286,9 @@
 
 > each item in videos
 >
-> ​ h1=item.title
+> ? h1=item.title
 >
-> ​ p= item.description
+> ? p= item.description
 
 <br/>
 
@@ -620,3 +620,27 @@
      - @babel/polyfill [Link](https://babeljs.io/docs/en/babel-polyfill)
        - .JS that fixes home
        - restart the servers
+
+<br/>
+
+<br/>
+
+## Frontend: Styling
+
+- reset.scss
+
+  - puts everything into default
+
+- main.scss
+
+  - min-height
+    - have footer at the desired location
+
+- exclusively sass file = "\_sass.scss"
+
+- forms
+
+  - middlewares.js
+    - delete authenticated
+
+- > nodemon --ignore 'scss'
