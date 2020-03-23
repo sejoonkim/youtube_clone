@@ -34,6 +34,7 @@ const app = express();
 app.use(helmet()); // for security
 app.set("view engine", "pug");
 app.use("/uploads", express.static("uploads"));
+app.use("/static", express.static("static"));
 app.use(cookieParser()); // for User Authentication
 app.use(bodyParser.json()); // checks what content user is sending
 app.use(bodyParser.urlencoded({ extended: true }));

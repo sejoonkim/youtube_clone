@@ -573,3 +573,50 @@
 
     - add id
     - modify vidoeFile
+
+<br/>
+
+<br/>
+
+## Frontend: Webpack
+
+- bundler
+
+- > npm install webpack webpack-cli
+
+- will look for webpack.config.js
+
+- have to teach each .fileExtensions to webpack
+
+<br/>
+
+### Styles with Webpack
+
+1. webpack.config.js
+
+   - > const MODE = process.env.WEBPACK_ENV
+
+   - \*[WEBPACK error](https://www.npmjs.com/package/cross-env)
+
+     - download cross-env
+
+   - add loaders to webpack (webpack processes the written code order backwards)
+
+     - module > rules
+     - from .scss to .css
+       - extract text plugin
+     - from .css to many more css for use
+     - [sass-loader](https://github.com/webpack-contrib/sass-loader) [postcss-loader](https://github.com/postcss/postcss-loader) [css-loader](https://github.com/webpack-contrib/css-loader)
+
+2. enable JS by Webpack
+
+   - babel-loader
+   - "webpack -w" watch, keep on running when changed
+   - main.pug
+     - add <link></link> and script
+     - let the server know to add "/static" path
+   - \*regeneratorRuntime is not defined
+     - when there is only ASYNC not followed by AWAIT
+     - @babel/polyfill [Link](https://babeljs.io/docs/en/babel-polyfill)
+       - .JS that fixes home
+       - restart the servers
