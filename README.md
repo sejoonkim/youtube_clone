@@ -671,3 +671,7 @@
 
 ### Logging the User In
 
+- middlewares pass information after next()
+- install express session
+  - handle sessions
+

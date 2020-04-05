@@ -4,6 +4,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
+import passport from "passport-local-mongoose";
 //import { userRouter } from "./routers/userRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
@@ -11,6 +12,7 @@ import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
 import { localsMiddleware } from "./middlewares";
 
+import "./passport";
 // ---------- const ----------
 // execute express
 const app = express();
@@ -39,6 +41,8 @@ app.use(cookieParser()); // for User Authentication
 app.use(bodyParser.json()); // checks what content user is sending
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
+app.use(passport,initialize());
+app.use(passport.session());
 app.use(localsMiddleware);
 
 // does not suit with MVC pattern
