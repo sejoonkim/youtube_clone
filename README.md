@@ -647,3 +647,13 @@
   - thing we can save on the browser
   - info that will be sent to backend everytime requests are sent
 - install passport-local-mongoose
+
+<br/>
+
+### Local Authentication with Passport
+
+- > npm i passport passport-local
+
+- PassportJS - [createStrategy()](http://www.passportjs.org/docs/)
+
+- 
