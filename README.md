@@ -656,4 +656,18 @@
 
 - PassportJS - [createStrategy()](http://www.passportjs.org/docs/)
 
-- 
+- serialization
+
+  - what info should cookie have?
+  - choose which fields to include to cookie
+
+- deserialization
+
+  - how to find the cookie ot convert to user?
+
+- modify routing before all the post requests
+
+<br/>
+
+### Logging the User In
+
