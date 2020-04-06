@@ -286,9 +286,9 @@
 
 > each item in videos
 >
-> ​ h1=item.title
+> ? h1=item.title
 >
-> ​ p= item.description
+> ? p= item.description
 
 <br/>
 
@@ -725,3 +725,6 @@
 - modify function that is executed after coming back from Github
 
 - send user to github
+  - modify routes.js
+  - create callback function
+- passport logout
