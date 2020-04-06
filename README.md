@@ -286,9 +286,9 @@
 
 > each item in videos
 >
-> ? h1=item.title
+> ​ h1=item.title
 >
-> ? p= item.description
+> ​ p= item.description
 
 <br/>
 
@@ -681,7 +681,7 @@
 
 <br/>
 
-### Logging the User In
+### Logging the User In & Sessions on Express
 
 - middlewares pass information after next()
 
@@ -697,3 +697,16 @@
     - saveUninitialized: false
 
 - goal: to maintain session even if made changes to the server
+
+<br/>
+
+### MongoStore and Middlewares
+
+- use database to store sessions
+- [connect mongo](https://www.npmjs.com/package/connect-mongo)
+
+- give CookieStore a connection to mongo
+- protect routes
+  - logged in user to go to "join"
+  - create middleware
+  - add security
