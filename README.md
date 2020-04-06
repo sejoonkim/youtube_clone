@@ -710,3 +710,18 @@
   - logged in user to go to "join"
   - create middleware
   - add security
+
+<br/>
+
+### Github Login
+
+- passport-github - [Link](http://www.passportjs.org/packages/passport-github/)
+
+- steps
+  1. send user to github
+  2. github will say "do you want to share?"
+  3. github will send the information to my website with data
+- save clientID, clientSecret on .env
+- modify function that is executed after coming back from Github
+
+- send user to github
