@@ -286,9 +286,9 @@
 
 > each item in videos
 >
-> ? h1=item.title
+> ​ h1=item.title
 >
-> ? p= item.description
+> ​ p= item.description
 
 <br/>
 
@@ -758,3 +758,12 @@
 - create new route "me"
 - change middleware
   - the "user" variable was confused between the user variable provided by the controller or the middlewares
+- redirect home is cannot find users id
+
+<br/>
+
+### Facebook Login
+
+- [facebook developers](https://developers.facebook.com/)
+- [passport-facebook](http://www.passportjs.org/packages/passport-facebook/)
+- we need email and profile photo, but not getting them
