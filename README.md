@@ -87,9 +87,9 @@
 
 <br/>
 
-### Handle Routes 
+### Handle Routes
 
-- GET 
+- GET
   - **request** for a page
   - NEED to **respond** something
 - POST
@@ -111,7 +111,7 @@
 
 <br/>
 
-### *Express Core: Middlewares
+### \*Express Core: Middlewares
 
 - "Middleman" between **requests** and **responses** -> [Middleware in ExpressJS](https://medium.com/@zibon/what-the-heck-is-a-middleware-in-expressjs-8f2661813ecd)
 
@@ -148,7 +148,7 @@
 
 <br/>
 
-### *Express Core: Routing
+### \*Express Core: Routing
 
 - (~~index.js~~ -> app.js) -> call the application
 
@@ -177,7 +177,7 @@
 
 1. Separate the routes from the function
 
-   - > *app**.**get*("/", someFunction); -> inacceptable!
+   - > _app**.**get_("/", someFunction); -> inacceptable!
 
 2. create URLs
 
@@ -198,6 +198,7 @@
 - easy template for HTML
 - install -> [Link](https://www.npmjs.com/package/pug)
 - change the view engine of express to pug -> [app.set](https://expressjs.com/en/4x/api.html#app.set)
+
 - "view" of express -> create "views" directory
 
 #### Pug: Layouts
@@ -215,12 +216,14 @@
 #### Pug: Local Variables
 
 - add information to the template as a whole
+
 - res.locals -> [Link](https://expressjs.com/en/4x/api.html#res.locals)
+
 - can access from any view
 
 #### Pug: Template Variables
 
-- > *res**.**render*("path", { variable: "value" });
+- > _res**.**render_("path", { variable: "value" });
 
 <br/>
 
@@ -229,10 +232,10 @@
 - ```javascript
   // Which one is more intuitive?
   const B = req.query.A;
-  
+
   const {
-      query: { A: B }
-    } = req;
+    query: { A: B },
+  } = req;
   ```
 
 <br/>
@@ -247,7 +250,7 @@
 
 - Login -> added social login
 
-- ***users/edit-profile leads to User Detail page
+- \*\*\*users/edit-profile leads to User Detail page
 
   - in routes.js
 
@@ -283,9 +286,9 @@
 
 > each item in videos
 >
-> ​	h1=item.title
+> ? h1=item.title
 >
-> ​	p= item.description
+> ? p= item.description
 
 <br/>
 
@@ -297,7 +300,7 @@
 
 - function
 
-- *PUG
+- \*PUG
 
   - > h1 = video.title // WRONG!!! outputs "= video.title"
     >
@@ -312,7 +315,9 @@
 - divide get / post routes
   - check globalRouter.js
 - return correct status code for passwords do not match
+
   - [status codes](https://www.tutorialspoint.com/http/http_status_codes.htm)
+
 - how to show actual user page with /:id url?
   - middlewares.js
     - add user { id: 1}
@@ -368,7 +373,9 @@
 
 - model = actual data
 - schema = structure
+
   - [mongoose_schema](https://mongoosejs.com/docs/guide.html)
+
 - JS, mongoose is conscious, but MongoDB does not know created schema yet
   - so at init.js, import the Video model
 
@@ -376,7 +383,7 @@
 
 ### Comment Model
 
-- Relationship of Data: How do we relate Video & Comment models? 
+- Relationship of Data: How do we relate Video & Comment models?
   - save video id on comment model
   - OR video model contains array of comment ids
 - Finally have a working DB!
@@ -389,13 +396,13 @@
 
   - videoController.js
 
-    - > *import* Video *from* "../models/Video";
+    - > _import_ Video _from_ "../models/Video";
 
     - > export const home = async(req, res)
       >
-      > await while getting all videos 
+      > await while getting all videos
       >
-      > ***use Try {} Catch {}
+      > \*\*\*use Try {} Catch {}
 
 <br/>
 
@@ -421,7 +428,7 @@
 
   - middlewares.js
 
-    - dest: "uploads/videos/" ***NO SLASH
+    - dest: "uploads/videos/" \*\*\*NO SLASH
 
       - > dest: "/uploads/videos/"
         >
@@ -493,10 +500,11 @@
    - pass video object when rendering
 
      > 1. res.render("editVideo", { pageTitle: `Edit ${video.title}`, video })
+     >
      > 2. at editVideo.pug, value prop
      > 3. value=video.title
      > 4. textarea does not have value
-     >    - textarea(*name*="description", *placeholder*="Description")=video.description
+     >    - textarea(_name_="description", _placeholder_="Description")=video.description
 
 5. check URL for editVideo
 
@@ -505,9 +513,13 @@
 ### Update Video
 
 1. videoController.js
+
    - modify postEditVideo
+
 2. mongoose
+
    - model.findOneAndUpdate -> [Link](https://mongoosejs.com/docs/tutorials/findoneandupdate.html)
+
    - save
 
 <br/>
@@ -547,15 +559,15 @@
 
       - > npm install eslint-config-prettier
 
-    - npm uninstall 
+    - npm uninstall
 
 - search
 
-  - regex -> [Link](https://regex101.com/)	
+  - regex -> [Link](https://regex101.com/)
 
   - videoController.js
 
-    - > ${regex}
+    - > \${regex}
 
   - search.pug
 
@@ -584,7 +596,7 @@
 
    - > const MODE = process.env.WEBPACK_ENV
 
-   - *[WEBPACK error](https://www.npmjs.com/package/cross-env)
+   - \*[WEBPACK error](https://www.npmjs.com/package/cross-env)
 
      - download cross-env
 
@@ -594,7 +606,7 @@
      - from .scss to .css
        - extract text plugin
      - from .css to many more css for use
-     - [sass-loader](https://github.com/webpack-contrib/sass-loader)    [postcss-loader](https://github.com/postcss/postcss-loader)    [css-loader](https://github.com/webpack-contrib/css-loader)
+     - [sass-loader](https://github.com/webpack-contrib/sass-loader) [postcss-loader](https://github.com/postcss/postcss-loader) [css-loader](https://github.com/webpack-contrib/css-loader)
 
 2. enable JS by Webpack
 
@@ -603,7 +615,7 @@
    - main.pug
      - add <link></link> and script
      - let the server know to add "/static" path
-   - *regeneratorRuntime is not defined
+   - \*regeneratorRuntime is not defined
      - when there is only ASYNC not followed by AWAIT
      - @babel/polyfill [Link](https://babeljs.io/docs/en/babel-polyfill)
        - .JS that fixes home
@@ -624,7 +636,7 @@
   - min-height
     - have footer at the desired location
 
-- exclusively sass file = "_sass.scss"
+- exclusively sass file = "\_sass.scss"
 
 - forms
 
@@ -672,6 +684,16 @@
 ### Logging the User In
 
 - middlewares pass information after next()
-- install express session
-  - handle sessions
 
+- install [express session](https://www.npmjs.com/package/express-session)
+
+  - > npm install express-session
+
+  - options
+
+    - secret: a random string to encrypt session ID [random keygen](https://randomkeygen.com/)
+    - at .env write `COOKIE_SECRET`
+    - resave: true
+    - saveUninitialized: false
+
+- goal: to maintain session even if made changes to the server

@@ -6,7 +6,7 @@
 // export const editProfile = (req, res) => res.send("Edit Profile");
 // export const changePassword = (req, res) => res.send("Change Password");
 
-import passport from "passport-local-mongoose";
+import passport from "passport";
 import routes from "../routes";
 import User from "../models/User";
 
@@ -15,23 +15,24 @@ import User from "../models/User";
 export const getJoin = (req, res) => {
   res.render("join", { pageTitle: "Join" });
 };
-export const postJoin = async(req, res, next) => {
+export const postJoin = async (req, res, next) => {
   const {
-    body: { name, email, password, password2 }
+    body: { name, email, password, password2 },
   } = req;
   if (password !== password2) {
     res.status(400);
     res.render("join", { pageTitle: "Join" });
   } else {
-    try {// To Do: Register User
+    try {
+      // To Do: Register User
       const user = await User({
         name,
-        email
+        email,
       });
       await User.register(user, password);
       next();
       // To Do: Log user in
-    } catch(error) {
+    } catch (error) {
       console.log(error);
       res.redirect(routes.home);
     }
@@ -40,10 +41,10 @@ export const postJoin = async(req, res, next) => {
 
 export const getLogin = (req, res) =>
   res.render("login", { pageTitle: "Log In" });
-export const postLogin = passport.authenticate('local', {
+export const postLogin = passport.authenticate("local", {
   failureRedirect: routes.login,
-  successfulRedirect: routes.home
-})
+  successRedirect: routes.home,
+});
 
 export const logout = (req, res) => {
   // Tp Do: Process Log Out
