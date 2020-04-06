@@ -732,3 +732,29 @@
 - modify callback function
   - if found user, then return with null
   - if not found user, return the newUser
+
+<br/>
+
+### Recap on Authentication
+
+- user, password authentication
+
+  1. send POST with user, password
+  2. mongoose automatically checks if password works
+  3. passport puts it on cookie
+
+- github authentication
+  1. user goes to github website and authorizes
+  2. github (auth) -> /auth/github/callback
+  3. passport calls function "githubLoginCallback", gets profile data, find user by email etc
+  4. it needs to execute cb(error?, user?)
+  5. cookie = makeCookie(user), savedCookie = saveCookie(cookie), sendCookie(savedCookie)
+  6. redirects to home
+
+<br/>
+
+### User Profile
+
+- create new route "me"
+- change middleware
+  - the "user" variable was confused between the user variable provided by the controller or the middlewares
