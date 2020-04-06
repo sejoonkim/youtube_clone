@@ -728,3 +728,7 @@
   - modify routes.js
   - create callback function
 - passport logout
+
+- modify callback function
+  - if found user, then return with null
+  - if not found user, return the newUser
