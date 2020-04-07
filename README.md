@@ -286,9 +286,9 @@
 
 > each item in videos
 >
-> ​ h1=item.title
+> ? h1=item.title
 >
-> ​ p= item.description
+> ? p= item.description
 
 <br/>
 
@@ -767,3 +767,16 @@
 - [facebook developers](https://developers.facebook.com/)
 - [passport-facebook](http://www.passportjs.org/packages/passport-facebook/)
 - we need email and profile photo, but not getting them
+
+- error
+
+  - > URL? ???? ? ??: ? ???? ???? ?? ?? URL???. ? URL? ?????? ? ???? ? ??? ??? ?? ?? ???? ?? ???? ?????.
+
+  - need to make localhost https
+
+    - [localtunnel](https://localtunnel.github.io/www/) => DOESN'T WORK
+    - just for testing
+    - [ngrok](https://ngrok.com/)
+    - use cmd to execute
+
+- get information by profileFields
