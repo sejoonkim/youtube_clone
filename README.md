@@ -791,3 +791,17 @@
     if user.id === loggedUser.id
     // render the buttons for editing profile and changing password
     ```
+
+<br/>
+
+### Edit Profile GET and POST
+
+- allow user to change profile photo
+
+  - if file path is null?
+
+  - ```javascript
+    avatarUrl: file ? file.path : req.user.avatarUrl,
+    ```
+
+- be cautious about routing
