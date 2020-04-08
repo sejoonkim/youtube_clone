@@ -286,9 +286,9 @@
 
 > each item in videos
 >
-> ? h1=item.title
+> ​ h1=item.title
 >
-> ? p= item.description
+> ​ p= item.description
 
 <br/>
 
@@ -770,7 +770,7 @@
 
 - error
 
-  - > URL? ???? ? ??: ? ???? ???? ?? ?? URL???. ? URL? ?????? ? ???? ? ??? ??? ?? ?? ???? ?? ???? ?????.
+  - > URL을 읽어들일 수 없음: 앱 도메인에 포함되어 있지 않은 URL입니다. 이 URL을 읽어들이려면 앱 설정에서 앱 도메인 필드에 앱의 모든 도메인과 서브 도메인을 추가하세요.
 
   - need to make localhost https
 
@@ -780,3 +780,14 @@
     - use cmd to execute
 
 - get information by profileFields
+
+<br/>
+
+### User Profile Styling and Security
+
+- prevent user from modifying another user's account information
+
+  - ```javascript
+    if user.id === loggedUser.id
+    // render the buttons for editing profile and changing password
+    ```
