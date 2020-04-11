@@ -443,7 +443,7 @@
       videos
       > db.videos.remove({})
       WriteResult({ "nRemoved" : 2 })
-      > db.collection(videos).find()
+      > db.collection(videos).find({})
       ---Shows a list of elements in the collection---
       > exit
       bye
@@ -817,3 +817,26 @@
 - https://github.com/saintedlama/passport-local-mongoose/#API-Documentation
 - password is encrypted
 - create GET and POST change password
+
+<br/>
+
+### Adding Creator to Video
+
+- remove videos
+
+  - > db.videos.delete({})
+
+- upload video with user
+
+  1. add creator at Video.js, Comment.js, and plus comment in User.js => Model
+
+- in POST, there is user object inside request
+
+- extracting the user ID from video model data
+
+  - await Video.findById(id).populate();
+    - can only use with FIELDS: ObjectId
+
+- protect edit video
+
+<br/>

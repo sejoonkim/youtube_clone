@@ -26,13 +26,13 @@ export const home = async (req, res) => {
 
 export const search = async (req, res) => {
   const {
-    query: { term: searchingBy }
+    query: { term: searchingBy },
   } = req;
   // equals const searchingBy = req.query.term;
   let videos = [];
   try {
     videos = await Video.find({
-      title: { $regex: searchingBy, $options: "i" }
+      title: { $regex: searchingBy, $options: "i" },
     });
   } catch (error) {
     console.log(error);
@@ -46,13 +46,16 @@ export const getUpload = (req, res) =>
 export const postUpload = async (req, res) => {
   const {
     body: { title, description },
-    file: { path }
+    file: { path },
   } = req;
   const newVideo = await Video.create({
     fileUrl: path,
     title,
-    description
+    description,
+    creator: req.user.id,
   });
+  req.user.videos.push(newVideo.id);
+  req.user.save();
   console.log(newVideo);
   //res.render("upload", { pageTitle: "Upload" });
   res.redirect(routes.videoDetail(newVideo.id));
@@ -60,10 +63,11 @@ export const postUpload = async (req, res) => {
 
 export const videoDetail = async (req, res) => {
   const {
-    params: { id }
+    params: { id },
   } = req;
   try {
-    const video = await Video.findById(id);
+    const video = await Video.findById(id).populate("creator");
+    console.log(video);
     res.render("videoDetail", { pageTitle: video.title, video });
   } catch (error) {
     console.log(error);
@@ -73,7 +77,7 @@ export const videoDetail = async (req, res) => {
 
 export const getEditVideo = async (req, res) => {
   const {
-    params: { id }
+    params: { id },
   } = req;
   try {
     const video = await Video.findById(id);
@@ -86,7 +90,7 @@ export const getEditVideo = async (req, res) => {
 export const postEditVideo = async (req, res) => {
   const {
     params: { id },
-    body: { title, description }
+    body: { title, description },
   } = req;
   try {
     // Not going to save it to any variable, just execute
@@ -99,7 +103,7 @@ export const postEditVideo = async (req, res) => {
 
 export const deleteVideo = async (req, res) => {
   const {
-    params: { id }
+    params: { id },
   } = req;
   try {
     await Video.findOneAndRemove({ _id: id });
