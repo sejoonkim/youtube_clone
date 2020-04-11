@@ -443,6 +443,8 @@
       videos
       > db.videos.remove({})
       WriteResult({ "nRemoved" : 2 })
+      > db.collection(videos).find()
+      ---Shows a list of elements in the collection---
       > exit
       bye
       ```
@@ -765,7 +767,9 @@
 ### Facebook Login
 
 - [facebook developers](https://developers.facebook.com/)
+
 - [passport-facebook](http://www.passportjs.org/packages/passport-facebook/)
+
 - we need email and profile photo, but not getting them
 
 - error
@@ -805,3 +809,11 @@
     ```
 
 - be cautious about routing
+
+<br/>
+
+### Change Password
+
+- https://github.com/saintedlama/passport-local-mongoose/#API-Documentation
+- password is encrypted
+- create GET and POST change password
