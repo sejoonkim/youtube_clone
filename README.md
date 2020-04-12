@@ -899,3 +899,9 @@
          - https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement
          - JS is run before the loading of the video, so time of duration is NaN
          - run getCurrentTime function with 1second interval
+         - Math.floor(videoPlayer.currentTime)
+       - volume bar
+         - CSS styling
+         - .pug, amending range parameters
+         - JS - show different speaker characters
+         - JS - correspond with mute
