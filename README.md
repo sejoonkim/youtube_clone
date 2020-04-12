@@ -935,3 +935,33 @@
   4. provide name for the file with .webm || .mp4 extension
   5. append the link to the body as child
   6. pretend the download link has been clicked
+- NOTE!
+  - Duration is not provided
+
+<br/>
+
+<br/>
+
+## API + AJAX
+
+### Register Views
+
+- AJAX
+
+  - add to browser without browser loading
+  - foundation for single page apps
+
+- API
+  - if an URL was visited with the right configuration
+    - do something to the server
+- How to add API, the whole routing URL?
+  1. routes.js
+     - configure the specific URLs
+  2. videoController.js
+     - add postRegisterView, async-await
+     - try catch finally
+     - change the number of views and save it to DB
+  3. apiRouter.js
+     - state the function to run when visited routes.registerView
+  4. app.js
+     - connect when localhost:4000/api + routing(GET request to routes.registerView)
