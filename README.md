@@ -894,3 +894,8 @@
          - https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen
          - implemented with the vendor prefix:webkit
        - exit fullscreen button
+       - time
+         - duration, playback time
+         - https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement
+         - JS is run before the loading of the video, so time of duration is NaN
+         - run getCurrentTime function with 1second interval
