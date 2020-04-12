@@ -787,6 +787,10 @@
 
 <br/>
 
+<br/>
+
+## Relationships and Route Protection
+
 ### User Profile Styling and Security
 
 - prevent user from modifying another user's account information
@@ -840,3 +844,34 @@
 - protect edit video
 
 <br/>
+
+### Protect Video Routes
+
+- await Video.findById(id) is just the ID
+- when clicked on the user, show videos uploaded by the user
+
+<br/>
+
+<br/>
+
+## Custom Video Player
+
+- problem
+
+  - if logged out, cannot access video detail
+
+    - loggedUser.id is not found
+
+  - solution
+
+    - > _res**.**locals**.**loggedUser_ = _req**.**user_ || _null_;
+      >
+      > _res**.**locals**.**loggedUser_ = _req**.**user_ || {};
+
+- create frontend for video player
+
+  1. create mixins
+
+  2. create css styles
+
+     - get icons from fontawesome.com
