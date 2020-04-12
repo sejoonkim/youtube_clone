@@ -871,7 +871,18 @@
 - create frontend for video player
 
   1. create mixins
-
   2. create css styles
 
      - get icons from fontawesome.com
+
+  3. create js file
+     - "cannot read property" error
+       - js files will be loaded to all pages because it is included in the footer
+       - based on the element id, able functions or not able them
+       - either declare let or do const + querySelector
+     - create ids
+       - play button
+         - https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement
+         - handlePlayClick
+           - video.paused
+       - before calling mixins, the javascript calls js files first, so no queryselectors are selected
