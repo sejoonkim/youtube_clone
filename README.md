@@ -886,3 +886,6 @@
          - handlePlayClick
            - video.paused
        - before calling mixins, the javascript calls js files first, so no queryselectors are selected
+       - pause button
+       - volume button
+       - mute button
