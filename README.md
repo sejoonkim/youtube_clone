@@ -905,3 +905,15 @@
          - .pug, amending range parameters
          - JS - show different speaker characters
          - JS - correspond with mute
+
+<br/>
+
+<br/>
+
+## Recording Video with JavaScript
+
+### Getting User Media
+
+- create basic CSS styling and HTML
+- add JS - get stream from camera
+  - https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices
