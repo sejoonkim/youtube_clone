@@ -917,3 +917,12 @@
 - create basic CSS styling and HTML
 - add JS - get stream from camera
   - https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices
+
+<br/>
+
+### Recording Video
+
+- save the recorded video
+- https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder
+  - only have 1 onclick per button -> addEventListener!
+  - "dataavailable"
