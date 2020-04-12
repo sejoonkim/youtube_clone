@@ -926,3 +926,12 @@
 - https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder
   - only have 1 onclick per button -> addEventListener!
   - "dataavailable"
+    - when recording is ended, have access to the stream data
+    - setTimeout 5000ms OR videoRecorder.start(1000)
+- Process
+  1. get the videoFile from event
+  2. create link as <a> tag
+  3. create URL from the videoFile
+  4. provide name for the file with .webm || .mp4 extension
+  5. append the link to the body as child
+  6. pretend the download link has been clicked
