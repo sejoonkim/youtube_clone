@@ -889,3 +889,8 @@
        - pause button
        - volume button
        - mute button
+       - fullscreen button
+         - switch addEventListeners
+         - https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen
+         - implemented with the vendor prefix:webkit
+       - exit fullscreen button
