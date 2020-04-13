@@ -1,40 +1,47 @@
 import axios from "axios";
+import routes from "../../routes";
 
-const commentList = document.getElementById("jsCommentList");
-const commentNumber = document.getElementById("jsCommentNumber");
-const deleteBtnArr = commentList.querySelectorAll(".jsDeleteButton");
+const commentNum = document.querySelector("#jsCommentNumber");
+const commentList = document.querySelector("#jsCommentList");
+const comment = document.querySelectorAll(".jsComment");
 
-const decreaseNumber = () => {
-  commentNumber.innerHTML = parseInt(commentNumber.innerHTML, 10) - 1;
+const decreaseNum = () => {
+  commentNum.innerHTML = parseInt(commentNum.innerHTML, 10) - 1;
 };
 
-const fakeDeleteComment = (li) => {
-  li.remove();
-  decreaseNumber();
+const deleteComment = (id, target) => {
+  const span = target.parentElement;
+  const li = span.parentElement;
+  commentList.removeChild(li);
+  decreaseNum();
 };
 
-const deleteComment = async (comment, li) => {
-  const videoId = window.location.href.split("/videos/")[1];
-  await axios({
-    url: `/api/${videoId}/deletecomment`,
+const handleDeleteClick = async (event) => {
+  const target = event.target;
+  const commentId = target.id;
+  const response = await axios({
+    url: `${routes.api}/${commentId}/comment/delete`,
     method: "POST",
-    data: comment,
+    data: {
+      commentId,
+    },
   });
-  fakeDeleteComment(li);
+  if (response.status === 200) {
+    deleteComment(commentId, target);
+  }
 };
 
-const handleDeleteClick = (event) => {
-  const li = event.target.closest("li");
-  const comment = li.querySelector("#comment").innerHTML;
-  deleteComment(comment, li);
+const addEvent = () => {
+  comment.forEach(function (el) {
+    const delBtn = el.childNodes[1];
+    delBtn.addEventListener("click", handleDeleteClick);
+  });
 };
 
-const init = () => {
-  deleteBtnArr.forEach((jsDeleteButton) =>
-    jsDeleteButton.addEventListener("click", handleDeleteClick)
-  );
-};
+function init() {
+  addEvent();
+}
 
-if (commentList) {
+if (comment) {
   init();
 }
