@@ -1059,3 +1059,25 @@
        const deleteBtnArr = commentList.querySelectorAll(".jsDeleteButton");
        // This Works TOO!
        ```
+
+<br/>
+
+<br/>
+
+## Deploy app
+
+- Amazon S3
+
+  - storage, folder
+  - divided into buckets
+
+  - make a public bucket
+
+  - use multer to upload to bucket
+  - IAM -> create new user
+    - AmazonS3FullAccess
+    - copy keyID, secret access key
+
+- at youtube_clone app
+
+  - npm i aws-sdk multer-s3
