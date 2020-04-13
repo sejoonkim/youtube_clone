@@ -61,12 +61,15 @@
             margin-top: 50px;
             align-self: center;
 
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+
             li {
                 display: grid;
                 grid-template-columns: auto 20px;
 
-
-                span {
+                span#comment {
                     background-color: #3498db;
                     color: white;
                     padding: 15px 30px;
@@ -74,16 +77,11 @@
                     border-bottom-left-radius: 0px;
                 }
 
-                i {
+                span {
                     align-self: center;
-                }
-
-                &:not(:last-child) {
-                    margin-bottom: 15px;
+                    cursor: pointer;
                 }
             }
-
-
         }
     }
 }

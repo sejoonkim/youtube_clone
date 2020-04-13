@@ -1034,5 +1034,28 @@
 ### Delete Comment
 
 1. frontend
+
    - styling
    - icon
+
+2. assets/deleteComment.js
+
+   - ```javascript
+     const deleteBtnArr = commentList.getElementsByClassName("jsDeleteButton");
+     ```
+
+   - deleteBtnArr is not an Array, it is HTMLCollection
+
+     - not `forEach` method
+
+     - ```javascript
+       const deleteBtnArr = [
+         ...commentList.getElementsByClassName("jsDeleteButton"),
+       ];
+       // to transform HTMLCollection to Array
+       ```
+
+     - ```javascript
+       const deleteBtnArr = commentList.querySelectorAll(".jsDeleteButton");
+       // This Works TOO!
+       ```
