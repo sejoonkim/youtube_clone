@@ -59,13 +59,24 @@
 
         .video__comments-list {
             margin-top: 50px;
+            align-self: center;
 
             li {
-                background-color: #3498db;
-                color: white;
-                padding: 15px 30px;
-                border-radius: 20px;
-                border-bottom-left-radius: 0px;
+                display: grid;
+                grid-template-columns: auto 20px;
+
+
+                span {
+                    background-color: #3498db;
+                    color: white;
+                    padding: 15px 30px;
+                    border-radius: 20px;
+                    border-bottom-left-radius: 0px;
+                }
+
+                i {
+                    align-self: center;
+                }
 
                 &:not(:last-child) {
                     margin-bottom: 15px;

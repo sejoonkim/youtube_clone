@@ -1028,3 +1028,11 @@
     2. videoController.js, when adding comment, append it rather than push it
   - fake the number of comments
     - parseInt since the number is a string
+
+<br/>
+
+### Delete Comment
+
+1. frontend
+   - styling
+   - icon
