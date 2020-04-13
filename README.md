@@ -983,3 +983,21 @@
 - After watching the video -> send the API request to raise the views
 
   - @handleEnded()
+
+<br/>
+
+### Add Comment
+
+- How to add comment API, and routing?
+
+  1. routes.js
+     - add comment URL
+  2. videoController.js
+
+     - add postAddComment
+
+  3. apiRouter.js
+     - add post request to routes.addComment
+
+- videoController.js
+  - make sure to populate comments
