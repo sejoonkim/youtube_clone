@@ -1,4 +1,4 @@
-import Axios from "axios";
+import axios from "axios";
 
 const commentList = document.getElementById("jsCommentList");
 const commentNumber = document.getElementById("jsCommentNumber");
@@ -15,7 +15,7 @@ const fakeDeleteComment = (li) => {
 
 const deleteComment = async (comment, li) => {
   const videoId = window.location.href.split("/videos/")[1];
-  await Axios({
+  await axios({
     url: `/api/${videoId}/deletecomment`,
     method: "POST",
     data: comment,
