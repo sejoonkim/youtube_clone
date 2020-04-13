@@ -1078,14 +1078,17 @@
     - AmazonS3FullAccess
     - copy keyID, secret access key
 
-- at youtube_clone app
+<br/>
 
+- at youtube_clone app
   - npm i aws-sdk multer-s3
   - multer -> multer-s3
     - change how video gets uploaded
     - middlewares.js
       - acl = access control lists
     - clean up URL paths in views
+
+<br/>
 
 - Blob Duration Bug
 
@@ -1099,3 +1102,11 @@
     ```
 
   - Amazon S3 CORS configuration
+
+<br/>
+
+- Migrate the DB to MongoLab
+  - [MongoLab](https://mlab.com/)
+  - create cluster
+  - create database user
+  - connect with the mlab
