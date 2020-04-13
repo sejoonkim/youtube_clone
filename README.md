@@ -1081,3 +1081,8 @@
 - at youtube_clone app
 
   - npm i aws-sdk multer-s3
+  - multer -> multer-s3
+    - change how video gets uploaded
+    - middlewares.js
+      - acl = access control lists
+    - clean up URL paths in views
