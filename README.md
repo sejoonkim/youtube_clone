@@ -1000,4 +1000,23 @@
      - add post request to routes.addComment
 
 - videoController.js
+
   - make sure to populate comments
+
+- send comments with AJAX
+
+  - ```javascript
+    const sendComment = async (comment) => {
+      // axios.post is okay too
+      const videoId = window.location.href.split("/videos/")[1];
+      const response = await axios({
+        url: `/api/${videoId}/comment`,
+        method: "POST",
+        data: {
+          comment,
+        },
+      });
+    };
+    ```
+
+- style the comments
