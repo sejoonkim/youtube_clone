@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 import passport from "passport";
 import mongoose from "mongoose";
 import session from "express-session";
+import path from "path";
 import MongoStore from "connect-mongo";
 //import { userRouter } from "./routers/userRouter";
 import userRouter from "./routers/userRouter";
@@ -41,8 +42,8 @@ const CookieStore = MongoStore(session);
 // ---------- app.OOO ----------
 app.use(helmet()); // for security
 app.set("view engine", "pug");
-app.use("/uploads", express.static("uploads"));
-app.use("/static", express.static("static"));
+app.set("views", path.join(__dirname, "views"));
+app.use("/static", express.static(path.join(__dirname, "static")));
 app.use(cookieParser()); // for User Authentication
 app.use(bodyParser.json()); // checks what content user is sending
 app.use(bodyParser.urlencoded({ extended: true }));
