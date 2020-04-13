@@ -955,6 +955,7 @@
   - if an URL was visited with the right configuration
     - do something to the server
 - How to add API, the whole routing URL?
+
   1. routes.js
      - configure the specific URLs
   2. videoController.js
@@ -965,3 +966,20 @@
      - state the function to run when visited routes.registerView
   4. app.js
      - connect when localhost:4000/api + routing(GET request to routes.registerView)
+
+- Axios
+
+  - library => easier HTTP requests
+  - Needed for returning StatusCode after API request
+
+- fetch() for video player, axios for comments
+
+- How to get the video ID?
+
+  - ```javascript
+    window.location.href.split("/videos/")[1];
+    ```
+
+- After watching the video -> send the API request to raise the views
+
+  - @handleEnded()

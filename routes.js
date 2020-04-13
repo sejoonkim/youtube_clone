@@ -29,7 +29,7 @@ const FB_CALLBACK = "/auth/facebook/callback";
 
 // API
 const API = "/api";
-const REGISTER_VIEW = "/id:/view";
+const REGISTER_VIEW = "/:id/view";
 
 const routes = {
   home: HOME,
