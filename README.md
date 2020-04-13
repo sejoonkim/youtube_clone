@@ -1086,3 +1086,16 @@
     - middlewares.js
       - acl = access control lists
     - clean up URL paths in views
+
+- Blob Duration Bug
+
+  - > npm i get-blob-duration
+
+  - ```javascript
+    const blob = await fetch(videoPlayer.src).then((response) =>
+      response.blob()
+    );
+    // returning the blob
+    ```
+
+  - Amazon S3 CORS configuration
