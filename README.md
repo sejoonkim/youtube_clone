@@ -1020,3 +1020,11 @@
     ```
 
 - style the comments
+
+- fake comments
+  - listen to the status code from Axios
+  - the populate() lists elements from **older to new**
+    1. either reverse() on the frontend
+    2. videoController.js, when adding comment, append it rather than push it
+  - fake the number of comments
+    - parseInt since the number is a string
