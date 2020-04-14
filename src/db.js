@@ -9,11 +9,14 @@ dotenv.config();
 // });
 
 // hidden to public
-mongoose.connect(process.env.MONGO_URL_PROD, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  process.env.PRODUCTION ? process.env.MONGO_URL_PROD : process.env.MONGO_URL,
+  {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useFindAndModify: false,
+  }
+);
 
 const db = mongoose.connection;
 
