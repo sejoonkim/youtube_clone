@@ -952,8 +952,10 @@
   - foundation for single page apps
 
 - API
+
   - if an URL was visited with the right configuration
     - do something to the server
+
 - How to add API, the whole routing URL?
 
   1. routes.js
@@ -1022,6 +1024,7 @@
 - style the comments
 
 - fake comments
+
   - listen to the status code from Axios
   - the populate() lists elements from **older to new**
     1. either reverse() on the frontend
@@ -1149,3 +1152,94 @@
            import path from "path";
            app.set("views", path.join(__dirname, "views"));
            ```
+
+<br/>
+
+- Deploying to Heroku
+
+  - `npm i -g heroku`
+
+  - `npm i rd`
+
+  - `heroku login`
+
+  - `heroku create`
+
+  - `git remote add heroku "git URL"`
+
+  - `git remote -v`
+
+    - to check if linked
+
+  - `git push heroku master`
+
+  - if build failed
+
+    - `heroku logs --tail`
+
+    - windows cmd is not compatible with heroku
+
+      - npm i shx -D
+
+      - modify "copyAll" and "prebuild"
+
+      - ```json
+        "copyAll": "xcopy .\\src\\static .\\build\\static /s /y && xcopy .\\src\\views .\\build\\views /s /y",
+        "build": "npm run build:server && npm run build:assets && npm run copyAll",
+        ```
+
+    - Heroku does not build by default
+
+    - make sure `npm i @babel/cli`
+
+    - Why mongoose error?
+
+      - location of .env variables are .gitignored
+      - but Heroku works with Github
+
+    - Shape of package.json
+
+      - `git push origin master`
+
+        - ```json
+          "scripts": {
+              "dev:server": "nodemon --exec babel-node src/init.js --delay 2 --ignore '.scss' --ignore 'static'",
+              "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack -w",
+              "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack",
+              "build:server": "babel src --out-dir build --ignore 'src/assets','src/static','src/webpack.config.js",
+              "copyAll": "shx cp -R src/static build && shx cp -R src/views build",
+              "build": "shx rm -rf build",
+              "prebuild": "rd /s /q build",
+              "tunnel": "ngrok http 4000",
+              "start": "node build/init.js"
+            },
+          ```
+
+      - `git push heroku master`
+
+        - ```json
+          "scripts": {
+              "dev:server": "nodemon --exec babel-node src/init.js --delay 2 --ignore '.scss' --ignore 'static' ",
+              "dev:assets": "cd src && WEBPACK_ENV=development webpack -w",
+              "build:assets": "cd src && WEBPACK_ENV=production webpack",
+              "build:server": "babel src --out-dir build --ignore 'src/assets','src/static','src/webpack.config.js'",
+              "copyAll": "cp -R src/static build && cp -R src/views build",
+              "build": "npm run build:server && npm run build:assets && npm run copyAll",
+              "tunnel": "lt --port 4000",
+              "start": "PRODUCTION=true node build/init.js",
+              "prestart": "npm run build"
+            },
+          ```
+
+      - minus "prebuild", modify "copyAll, "start"
+
+  - add ENVIRONMENT variables to Heroku
+
+    - `heroku plugins:install heroku-config`
+      - `heroku config:push` : Writes the contents of a local file into `heroku config`
+        - find .env and put them into Heroku
+      - `heroku config` to see the environment variables
+
+  - settings -> Developer settings -> OAuth Apps -> youtube_clone
+
+    - change Homepage URL
