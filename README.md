@@ -1257,7 +1257,32 @@
   - app.js
     - `app.use(flash());`
   - userController.js
+
     - `req.flash("error", "WORDS TO SAY")`
     - in passport
       - successFlash
       - failureFlash
+
+  - styling
+
+    - ```scss
+      @keyframes flashAnimation {
+        0% {
+          transform: translateY(-70px);
+        }
+
+        5% {
+          transform: translateY(0px);
+        }
+
+        95% {
+          transform: translateY(0px);
+        }
+
+        100% {
+          transform: translateY(-70px);
+        }
+      }
+
+      animation: flashAnimation 2s ease-in-out forwards;
+      ```
