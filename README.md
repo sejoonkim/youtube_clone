@@ -1243,3 +1243,21 @@
   - settings -> Developer settings -> OAuth Apps -> youtube_clone
 
     - change Homepage URL
+
+<br/>
+
+- Express-flash
+
+  - module that allow to send message to user
+
+    - "welcome"
+    - "video upload"
+    - "not permitted"
+
+  - app.js
+    - `app.use(flash());`
+  - userController.js
+    - `req.flash("error", "WORDS TO SAY")`
+    - in passport
+      - successFlash
+      - failureFlash
